@@ -4,7 +4,7 @@
     </b>
 </h1>
 
-# <p align="center"> Pieces Python CLI Tool 
+# <p align="center"> Pieces Project XYZ
 <p align="center">
 <a href="https://github.com/pieces-app/example-typescript" alt="GitHub contributors">
 <img src="https://img.shields.io/github/contributors/pieces-app/example-typescript.svg" /><a>
