@@ -1,8 +1,11 @@
 <h1 align="center">
-   <b>
-        <a href="https://pieces.app"><img src="https://storage.googleapis.com/pieces_static_resources/pfd_wiki/PIECES_MAIN_LOGO_WIKI.png" /></a><br>
+    <b>
+        <a href="https://pieces.app">
+            <img src="https://github.com/Arindam200/pieces-readme-template/assets/109217591/4a8ebb8f-a46c-49fe-a0a4-a6ee41583a99" height="125" width="600" />
+        </a><br>
     </b>
 </h1>
+
 
 # <p align="center"> Pieces Project XYZ
 <p align="center">
