@@ -32,6 +32,7 @@ The Pieces SDK offers the following key features:
 1. Copilot Chats: Communicate seamlessly with copilot chats functionality.
 2. Asset Management: Save and manage assets and formats efficiently.
 3. Local Server Interaction: Interact with a locally hosted server for various functionalities.
+4. Multi LLMs support: Use any Pieces supported LLMs to power apps.
 
 ## Requirements
 The Pieces SDK has the following system requirements:
@@ -66,10 +67,11 @@ Here are a few examples of using some of the basic endpoints for getting up and 
 A developer documentation that outlines all the ins and outs of our available endpoints can be found [here](https://github.com/pieces-app/pieces-os-client-sdk-for-python/tree/main/docs).
 
 <details>
-<summary>  Connect</summary>
-When developing and creating an application on top of Pieces OS, it is important that you authenticate with the application itself when performing requests.
+<summary>Connect</summary>
 
-To 'connect' your application (this Python project) to the server, you will need to make a POST request to the api_instance.connect() endpoint of the API and print the response.
+   When developing and creating an application on top of Pieces OS, it is important that you authenticate with the application itself when performing requests.
+   
+   To 'connect' your application (this Python project) to the server, you will need to make a POST request to the `api_instance.connect()` endpoint of the API and print the response.
 
   ```
 # Enter a context with an instance of the API client
@@ -90,14 +92,16 @@ with pieces_os_client.ApiClient(configuration) as api_client:
 </details>
 <details>
 <summary>Creating with Asset & /Assets</summary>
-Asset is a very important model whose primary purpose is to manage the seeded data that comes into the application and is stored inside of Pieces OS. Each asset is identifiable as a piece of saved data, or pre-seeded data.
 
-/Assets is equally important, but instead of containing a single asset with parameters storing data on it, Assets serves as the list of type: Asset objects that are stored there. Also, you will find the operations for adding, deleting, searching, and other functions that are related to referencing a number of different snippets to make a comparison.
+   **Asset** is a very important model whose primary purpose is to manage the seeded data that comes into the application and is stored inside of Pieces OS. Each asset is identifiable as a piece of saved data, or pre-seeded data.
+
+**/Assets** is equally important, but instead of containing a single asset with parameters storing data on it, Assets serves as the list of type: Asset objects that are stored there. Also, you will find the operations for adding, deleting, searching, and other functions that are related to referencing a number of different snippets to make a comparison.
 
 </details>
 <details>
 <summary>SeededAsset</summary>
-SeededAsset is the Format needed by /assets/create in order to accept the snippet, create, and return the information you need. The structure (at a bare minimum) is as follows:
+
+   SeededAsset is the **Format** needed by `/assets/create` in order to accept the snippet, create, and return the information you need. The structure (at a bare minimum) is as follows:
 
 ```python
  
@@ -118,7 +122,8 @@ seeded_asset_form_dict = seeded_asset.from_dict(seeded_asset_dict)
 </details>
 <details>
 <summary>Get your Assets Snapshot</summary>
-When working with your app implementation you will often need to call the entire asset snapshot in order to get the correct snippet from your storage in Pieces OS. You can use this asset snapshot by passing the asset's ID and a boolean value indicating whether or not to return transferable data. The response from the API is then printed to the console.
+
+   When working with your app implementation you will often need to call the entire asset snapshot in order to get the correct snippet from your storage in Pieces OS. You can use this asset snapshot by passing the asset's ID and a boolean value indicating whether or not to return transferable data. The response from the API is then printed to the console.
 
 ```python
  
@@ -141,7 +146,8 @@ with pieces_os_client.ApiClient(configuration) as api_client:
 </details>
 <details>
 <summary>Updating your Assets</summary>
-Individual assets can be manipulated with a number of different properties and metadata. You can add titles, annotations, tags, links, anchors, and much more all through this single endpoint. To use the asset_update method of the AssetAPi class, pass a boolean value for transferables and an instance of the Asset class for the asset. It should update the asset in the database and print the response from the API call.
+
+   Individual assets can be manipulated with a number of different properties and metadata. You can add titles, annotations, tags, links, anchors, and much more all through this single endpoint. To use the asset_update method of the AssetAPi class, pass a boolean value for transferables and an instance of the Asset class for the asset. It should update the asset in the database and print the response from the API call.
 
 ```python
  
@@ -163,7 +169,8 @@ with pieces_os_client.ApiClient(configuration) as api_client:
 </details>
 <details>
 <summary>Deleting an Asset</summary>
-Similar to the previous example, you need assetSnapshot in order to access the proper asset on your list of data. You can use this endpoint to completely delete a specific asset wherever it may be in the list of all of your assets by taking a UID to delete out of the assets table.
+
+   Similar to the previous example, you need assetSnapshot in order to access the proper asset on your list of data. You can use this endpoint to completely delete a specific asset wherever it may be in the list of all of your assets by taking a UID to delete out of the assets table.
 
 ```python
  
