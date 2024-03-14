@@ -38,19 +38,19 @@ Before setting up the project we need to:
 1. Fork this repository by clicking on the <a href="https://github.com/pieces-app/example-typescript/new/master?readme=1#fork-destination-box"><kbd><b>Fork</b></kbd></a> button.
 2. Clone the repo by running the command
 ```sh
-$ git clone https://github.com/pieces-app/example-typescript.git
+git clone https://github.com/pieces-app/example-typescript.git
 ```
 3. Go inside the folder by command
 ```sh
-$ cd example-typescript
+cd example-typescript
 ```
 4. Run the command to install node modules
 ```sh
-$ npm install
+npm install
 ```
 5. Start a web server by running using the following command
 ```sh
-$ npm start
+npm start
 ```
 6. Access the url `http://localhost:8000` and start Exploring!
 
