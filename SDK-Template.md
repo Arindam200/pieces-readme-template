@@ -22,7 +22,7 @@ To get started with the Pieces SDK, follow these steps:
 After installing the SDK, you can import the library into your project and start utilizing its features:
 
 ```shell
-from pieces_os_client.models import *
+from pieces_os_client.models
 ```
 For detailed usage instructions and examples, refer to the [documentation](https://docs.pieces.app/).
 
