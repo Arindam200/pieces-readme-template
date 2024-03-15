@@ -803,6 +803,11 @@ Class | Method | HTTP request | Description
 
 </details>
 
-## Author
+## Learn More / Support
+Explore more about Pieces SDK and get help from the following resources:
 
-tsavo@pieces.app
+- 🚀 [Getting Started Tutorial](https://docs.pieces.app/installation-getting-started/what-am-i-installing)
+- 📜 [Pieces Docs](https://docs.pieces.app/)
+- 💬 [Discord Community](https://discord.gg/getpieces)
+
+## License
