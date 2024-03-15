@@ -12,26 +12,20 @@ For more information, please visit [https://pieces.app](https://pieces.app)
 ## Installation & Usage
 Requires Dart 2.12 or later
 
-**GitHub**
-
-If this Dart package is published to GitHub, add the following dependency to your pubspec.yaml
+1. **GitHub**: If this Dart package is published to GitHub, add the following dependency to your pubspec.yaml:
 ```
 dependencies:
   pieces_os_client:
     git: https://github.com/GIT_USER_ID/GIT_REPO_ID.git
 ```
 
-**Local**
-
-To use the package in your local drive, add the following dependency to your pubspec.yaml
+2. **Local**: To use the package in your local drive, add the following dependency to your pubspec.yaml:
 ```
 dependencies:
   pieces_os_client:
     path: /path/to/pieces_os_client
 ```
-**Getting Started**
-
-Please run the following:
+3. **Getting Started**: Please run the following:
 
 ```dart
 import 'package:pieces_os_client/api.dart';
