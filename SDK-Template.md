@@ -1,4 +1,37 @@
-# Pieces SDK
+<h1 align="center">
+    <b>
+        <a href="https://pieces.app">
+            <img src="https://github.com/Arindam200/pieces-readme-template/assets/109217591/4a8ebb8f-a46c-49fe-a0a4-a6ee41583a99" height="125" width="600" />
+        </a><br>
+    </b>
+</h1>
+
+# <p align="center"> Pieces OS Client SDK For Python
+   <p align="center">
+      <a href="https://github.com/pieces-app/pieces-os-client-sdk-for-python" alt="GitHub contributors">
+         <img src="https://img.shields.io/github/contributors/pieces-app/pieces-os-client-sdk-for-python.svg" />
+      <a>
+      <a href="https://github.com/pieces-app/pieces-os-client-sdk-for-python" alt="GitHub issues by-label">
+         <img src="https://img.shields.io/github/issues/pieces-app/pieces-os-client-sdk-for-python" />
+      </a>
+      <a href="https://discord.gg/getpieces" alt="Discord">
+         <img src="https://img.shields.io/badge/Discord-@layer5.svg?logo=discord" />
+      </a>
+      <a href="https://twitter.com/Keployio" alt="Twitter Follow">
+         <img src="https://img.shields.io/twitter/follow/keploy.svg?label=Follow" />
+      </a>
+      <a href="https://github.com/pieces-app/cli-agent" alt="License">
+         <img src="https://img.shields.io/github/license/pieces-app/pieces-os-client-sdk-for-python.svg" />
+      </a>
+      <a href="https://pypi.org/project/pieces_os_client" >
+         <img src="https://badge.fury.io/py/pieces-os-client.svg" />
+      </a>
+      <a href="https://pepy.tech/project/pieces_os_client" >
+         <img src="https://static.pepy.tech/badge/pieces_os_client" />
+      </a>
+   </p>
+</p>
+
 
 ## Introduction
 
@@ -228,7 +261,7 @@ Explore more about Pieces SDK and get help from the following resources:
 
 ## License
 
-
+This repository is available under the [MIT License](./LICENSE).
 
 
 
