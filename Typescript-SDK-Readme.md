@@ -15,7 +15,7 @@
          <img src="https://img.shields.io/github/issues/pieces-app/pieces-os-client-sdk-for-python" />
       </a>
       <a href="https://discord.gg/getpieces" alt="Discord">
-         <img src="https://img.shields.io/badge/Discord-@layer5.svg?logo=discord" />
+         <img src="https://img.shields.io/badge/Discord-@layer5.svg?color=7389D8&label&logo=discord&logoColor=ffffff" />
       </a>
       <a href="https://twitter.com/Keployio" alt="Twitter Follow">
          <img src="https://img.shields.io/twitter/follow/keploy.svg?label=Follow" />
