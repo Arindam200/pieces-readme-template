@@ -65,7 +65,7 @@ try {
 ```
 Developer documentation for API Endpoints and Models can be found [here](https://github.com/pieces-app/pieces-os-client-sdk-for-dart/tree/main/doc).
 
-All URIs are relative to `http://localhost:3000` , or `localhost:5323` for linux
+All URIs are relative to `http://localhost:1000` , or `localhost:5323` for linux
 
 **Documentation For Authorization**
 
