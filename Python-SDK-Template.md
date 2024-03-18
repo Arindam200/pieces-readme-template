@@ -1,3 +1,4 @@
+<!---
 <h1 align="center">
     <b>
         <a href="https://pieces.app">
@@ -5,6 +6,7 @@
         </a><br>
     </b>
 </h1>
+--->
 
 # <p align="center"> Pieces OS Client SDK For Python
    <p align="center">
@@ -17,8 +19,8 @@
       <a href="https://discord.gg/getpieces" alt="Discord">
          <img src="https://img.shields.io/badge/Discord-@layer5.svg?color=7389D8&label&logo=discord&logoColor=ffffff" />
       </a>
-      <a href="https://twitter.com/Keployio" alt="Twitter Follow">
-         <img src="https://img.shields.io/twitter/follow/keploy.svg?label=Follow" />
+      <a href="https://twitter.com/getpieces" alt="Twitter Follow">
+         <img src="https://img.shields.io/twitter/follow/pieces.svg?label=Follow" />
       </a>
       <a href="https://github.com/pieces-app/cli-agent" alt="License">
          <img src="https://img.shields.io/github/license/pieces-app/pieces-os-client-sdk-for-python.svg" />
