@@ -1,4 +1,30 @@
-#  Pieces-os-client-sdk-Dart
+<h1 align="center">
+    <b>
+        <a href="https://pieces.app">
+            <img src="https://github.com/Arindam200/pieces-readme-template/assets/109217591/4a8ebb8f-a46c-49fe-a0a4-a6ee41583a99" height="125" width="600" />
+        </a><br>
+    </b>
+</h1>
+
+# <p align="center"> Pieces-os-client-sdk-Dart
+   <p align="center">
+      <a href="https://github.com/pieces-app/pieces-os-client-sdk-for-dart" alt="GitHub contributors">
+         <img src="https://img.shields.io/github/contributors/pieces-app/pieces-os-client-sdk-for-dart.svg" />
+      <a>
+      <a href="https://github.com/pieces-app/pieces-os-client-sdk-for-dart" alt="GitHub issues by-label">
+         <img src="https://img.shields.io/github/issues/pieces-app/pieces-os-client-sdk-for-dart" />
+      </a>
+      <a href="https://discord.gg/getpieces" alt="Discord">
+         <img src="https://img.shields.io/badge/Discord-@layer5.svg?color=7389D8&label&logo=discord&logoColor=ffffff" />
+      </a>
+      <a href="https://twitter.com/getpieces" alt="Twitter Follow">
+         <img src="https://img.shields.io/twitter/follow/getpieces.svg?label=Follow" />
+      </a>
+      <a href="https://github.com/pieces-app/pieces-os-client-sdk-for-dart" alt="License">
+         <img src="https://img.shields.io/github/license/pieces-app/pieces-os-client-sdk-for-python.svg" />
+      </a>
+   </p>
+</p>
 
 Endpoints for Assets, Formats, Users, Asset, Format, User.
 
