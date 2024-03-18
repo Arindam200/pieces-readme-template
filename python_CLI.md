@@ -188,9 +188,8 @@ pieces help
 It is advised to keep the CLI tool updated to the latest version to ensure compatibility with Pieces OS and access to all features. Please refer to our documentation for details on supported versions.
 
 ## Contributing
-</details>
-<details>
-<summary>To run this project locally, follow these steps:</summary>
+
+To run this project locally, follow these steps:
 
 1. Fork this project via GitHub. 
 
@@ -249,7 +248,7 @@ Pieces help
 
 these can be local/github/pypi etc.
 
-</details>
+
 
 ## Learn More / Support
 Explore more about Pieces SDK and get help from the following resources:
