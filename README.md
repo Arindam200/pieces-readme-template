@@ -1,7 +1,20 @@
+<!-- 
 <h1 align="center">
     <b>
         <a href="https://pieces.app">
             <img src="https://github.com/Arindam200/pieces-readme-template/assets/109217591/4a8ebb8f-a46c-49fe-a0a4-a6ee41583a99" height="125" width="600" />
+        </a><br>
+    </b>
+</h1> -->
+
+<h1 align="center">
+    <b>
+        <a href="https://pieces.app">
+            <picture>
+                <source srcset="https://github.com/Arindam200/pieces-readme-template/assets/light-image.jpg" media="(prefers-color-scheme: light)">
+                <source srcset="https://github.com/Arindam200/pieces-readme-template/assets/109217591/4a8ebb8f-a46c-49fe-a0a4-a6ee41583a99" media="(prefers-color-scheme: dark)">
+                <img src="https://github.com/Arindam200/pieces-readme-template/assets/dark-image.jpg" height="125" width="600" />
+            </picture>
         </a><br>
     </b>
 </h1>
