@@ -9,6 +9,7 @@
         </a><br>
     </b>
 </h1>
+
 # <p align="center"> Pieces OS Client SDK For TypeScript
    <p align="center">
       <a href="https://github.com/pieces-app/pieces-os-client-sdk-for-typescript" alt="GitHub contributors">
