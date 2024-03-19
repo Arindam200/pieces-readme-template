@@ -99,12 +99,11 @@ with pieces_os_client.ApiClient(configuration) as api_client:
 **Your output should appear on your IDE terminal stating the version of the Pieces OS installed.**
 
 ## Examples
-Here are a few examples of using some of the basic endpoints for getting up and running, along with creating an asset for the first time. 
+Here are some examples of the basic endpoint for getting up and running: 
 
-A developer documentation that outlines all the ins and outs of our available endpoints can be found [here](https://github.com/pieces-app/pieces-os-client-sdk-for-python/tree/main/docs).
 
 <details>
-<summary>Connect</summary>
+<summary>Connect</summary
 
    When developing and creating an application on top of Pieces OS, it is important that you authenticate with the application itself when performing requests.
    
@@ -127,6 +126,8 @@ with pieces_os_client.ApiClient(configuration) as api_client:
   ```
   
 </details>
+
+<!--
 <details>
 <summary>Creating with Asset & /Assets</summary>
 
@@ -157,6 +158,7 @@ seeded_asset_dict = seeded_asset_instance.to_dict()
 seeded_asset_form_dict = seeded_asset.from_dict(seeded_asset_dict)
 ```
 </details>
+-->
 <details>
 <summary>Get your Assets Snapshot</summary>
 
@@ -181,6 +183,7 @@ with pieces_os_client.ApiClient(configuration) as api_client:
         print("Exception when calling AssetApi->asset_snapshot_post: %s\n" % e)
 ```
 </details>
+<!--
 <details>
 <summary>Updating your Assets</summary>
 
@@ -226,6 +229,9 @@ with pieces_os_client.ApiClient(configuration) as api_client:
         print("Exception when calling AssetsApi->assets_delete_asset: %s\n" % e)
 ```
 </details>
+-->
+
+A developer documentation that outlines all the ins and outs of our available endpoints can be found [here](https://github.com/pieces-app/pieces-os-client-sdk-for-python/tree/main/docs).
 
 ## Contributing
 Contributions to the Pieces SDK are welcome! To contribute, follow these steps:
