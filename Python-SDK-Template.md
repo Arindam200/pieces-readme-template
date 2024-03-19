@@ -46,9 +46,9 @@ The Pieces SDK is a powerful code engine package designed for writing applicatio
 To get started with the Pieces SDK, follow these steps:
 
 1. **Download Pieces OS**: Pieces OS serves as the primary backend service, providing essential functionality for the SDK. Download the appropriate version for your operating system:
-   - [macOS](https://docs.pieces.app/installation-getting-started/macos) - Compatible with macOS 11 Big Sur or higher.
-   - [Windows](https://docs.pieces.app/installation-getting-started/windows) - Compatible with Windows 10 version 1809 or higher.
-   - [Linux](https://docs.pieces.app/installation-getting-started/linux) - Compatible with Ubuntu 18 or higher.
+   - [macOS](https://docs.pieces.app/installation-getting-started/macos) 
+   - [Windows](https://docs.pieces.app/installation-getting-started/windows) 
+   - [Linux](https://docs.pieces.app/installation-getting-started/linux)
 
 2. **Install the PyPI Package**: Use pip to install the Pieces SDK package:
    ```shell
