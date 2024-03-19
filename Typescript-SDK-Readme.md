@@ -112,7 +112,7 @@ The Pieces SDK has the following system requirements:
 - NodeJs environment with npm for installing the SDK package.
 
 ## Testing Usage
-When your program starts, it needs to connect to Pieces OS to gain access to any functional data and to exchange information on the `localhost:1000` route. Now that you have your `tracked_application` - lets get into the details.
+When your program starts, it needs to connect to Pieces OS to gain access to any functional data and to exchange information on the `localhost:1000` route (or `localhost:5323` for linux). Now that you have your `tracked_application` - lets get into the details.
 
 Start by defining you connect function and prepare the `connectorApi` on `Pieces.ConnectorApi().connect()` passing in the `tracked_applicaition` we created above:
 
@@ -151,7 +151,7 @@ export async function connect(): Promise<JSON> {
 ## Examples
 Here are a few examples of using some of the basic endpoints for getting up and running, along with creating an asset for the first time. 
 
-A developer documentation that outlines all the ins and outs of our available endpoints can be found [here](https://github.com/pieces-app/pieces-os-client-sdk-for-python/tree/main/docs).
+
 
 
 <details>
@@ -225,6 +225,8 @@ new Pieces.AssetsApi().assetsSnapshot({}).then(_assetList => {
 })
 ```
 </details>
+
+<!--
 
 <details>
 
@@ -307,8 +309,9 @@ new Pieces.SearchApi().fullTextSearch({ query: "page" }).then( searchedAssets =>
 })
 ```
 </details>
+-->
 
-
+A developer documentation that outlines all the ins and outs of our available endpoints can be found [here](https://github.com/pieces-app/pieces-os-client-sdk-for-python/tree/main/docs).
 
 ## Contributing
 Contributions to the Pieces SDK are welcome! To contribute, follow these steps:
