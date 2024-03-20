@@ -313,9 +313,6 @@ new Pieces.SearchApi().fullTextSearch({ query: "page" }).then( searchedAssets =>
 
 A developer documentation that outlines all the ins and outs of our available endpoints can be found [here](https://github.com/pieces-app/pieces-os-client-sdk-for-python/tree/main/docs).
 
-## Contributing
-Contributions to the Pieces SDK are welcome! To contribute, follow these steps:
-
 ## Learn More 
 Explore more about Pieces SDK and get help from the following resources:
 
