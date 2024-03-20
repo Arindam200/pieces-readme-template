@@ -1,11 +1,3 @@
-<!-- 
-<h1 align="center">
-    <b>
-        <a href="https://pieces.app">
-            <img src="https://github.com/Arindam200/pieces-readme-template/assets/109217591/4a8ebb8f-a46c-49fe-a0a4-a6ee41583a99" height="125" width="600" />
-        </a><br>
-    </b>
-</h1> -->
 
 <h1 align="center">
     <b>
@@ -38,6 +30,19 @@
 
 </p>
 
+## Status: 
+
+- [X] [Python-SDK](https://github.com/Arindam200/pieces-readme-template/blob/main/Python-SDK-Template.md)
+- [X] [TypeScript SDK](https://github.com/Arindam200/pieces-readme-template/blob/main/Typescript-SDK-Readme.md)
+- [X] [Dart SDK](https://github.com/Arindam200/pieces-readme-template/blob/main/dart-SDK.md)
+- [ ] Kotlin SDK
+- [X] [Example Typescript](https://github.com/Arindam200/pieces-readme-template/blob/main/example-typescript.md)
+- [X] [Example Streamlit](https://github.com/Arindam200/pieces-readme-template/blob/main/example-streamlit.md)
+- [X] [CLI-Agent](https://github.com/Arindam200/pieces-readme-template/blob/main/python_CLI.md)w
+
+<!--f
+
+
 ## Prerequisites
 
 ## Local Setup
@@ -62,3 +67,4 @@
 ## License
 
 This repository is available under the [XYZ License](./LICENSE).
+-->
