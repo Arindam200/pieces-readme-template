@@ -233,6 +233,7 @@ with pieces_os_client.ApiClient(configuration) as api_client:
 
 A developer documentation that outlines all the ins and outs of our available endpoints can be found [here](https://github.com/pieces-app/pieces-os-client-sdk-for-python/tree/main/docs).
 
+<!--
 ## Contributing
 Contributions to the Pieces SDK are welcome! To contribute, follow these steps:
 
@@ -259,8 +260,7 @@ Add project dependencies:
 ```shell
 poetry add <dependency>
 ```
-
-
+---->
 
 ## Learn More / Support
 Explore more about Pieces SDK and get help from the following resources:
