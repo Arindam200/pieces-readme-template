@@ -82,16 +82,17 @@ The Pieces SDK has the following system requirements:
 Create a wellknown.py file and add this code to confirm you have installed the correct package:
 
 ```python
+
 # Enter a context with an instance of the API client
 with pieces_os_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pieces_os_client.WellKnownApi(api_client)
 
     try:
-        # api_instance.get_well_known_version() [Get]
+        # /.well-known/version [Get]
         api_response = api_instance.get_well_known_version()
         print("The response of WellKnownApi->get_well_known_version:\n")
-        print(api_response)
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling WellKnownApi->get_well_known_version: %s\n" % e)
 ``` 
@@ -109,56 +110,25 @@ Here are some examples of the basic endpoint for getting up and running:
    
    To 'connect' your application (this Python project) to the server, you will need to make a POST request to the `api_instance.connect()` endpoint of the API and print the response.
 
-  ```
+  ```python
+
 # Enter a context with an instance of the API client
 with pieces_os_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pieces_os_client.ConnectorApi(api_client)
-    seeded_connector_connection = pieces_os_client.SeededConnectorConnection() 
-    # SeededConnectorConnection |  (optional)
+    seeded_connector_connection = pieces_os_client.SeededConnectorConnection() # SeededConnectorConnection |  (optional)
+
     try:
-        # api_instance.connect() [POST]
+        # /connect [POST]
         api_response = api_instance.connect(seeded_connector_connection=seeded_connector_connection)
         print("The response of ConnectorApi->connect:\n")
-        print(api_response)
+        pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConnectorApi->connect: %s\n" % e)     
+        print("Exception when calling ConnectorApi->connect: %s\n" % e) 
   ```
   
 </details>
 
-<!--
-<details>
-<summary>Creating with Asset & /Assets</summary>
-
-   **Asset** is a very important model whose primary purpose is to manage the seeded data that comes into the application and is stored inside of Pieces OS. Each asset is identifiable as a piece of saved data, or pre-seeded data.
-
-**/Assets** is equally important, but instead of containing a single asset with parameters storing data on it, Assets serves as the list of type: Asset objects that are stored there. Also, you will find the operations for adding, deleting, searching, and other functions that are related to referencing a number of different snippets to make a comparison.
-
-</details>
-<details>
-<summary>SeededAsset</summary>
-
-   SeededAsset is the **Format** needed by `/assets/create` in order to accept the snippet, create, and return the information you need. The structure (at a bare minimum) is as follows:
-
-```python
- 
-from pieces_os_client.models.seeded_asset import SeededAsset
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of SeededAsset from a JSON string
-seeded_asset_instance = SeededAsset.from_json(json)
-# print the JSON string representation of the object
-print SeededAsset.to_json()
-
-# convert the object into a dict
-seeded_asset_dict = seeded_asset_instance.to_dict()
-# create an instance of SeededAsset from a dict
-seeded_asset_form_dict = seeded_asset.from_dict(seeded_asset_dict)
-```
-</details>
--->
 <details>
 <summary>Get your Assets Snapshot</summary>
 
@@ -183,84 +153,9 @@ with pieces_os_client.ApiClient(configuration) as api_client:
         print("Exception when calling AssetApi->asset_snapshot_post: %s\n" % e)
 ```
 </details>
-<!--
-<details>
-<summary>Updating your Assets</summary>
 
-   Individual assets can be manipulated with a number of different properties and metadata. You can add titles, annotations, tags, links, anchors, and much more all through this single endpoint. To use the asset_update method of the AssetAPi class, pass a boolean value for transferables and an instance of the Asset class for the asset. It should update the asset in the database and print the response from the API call.
-
-```python
- 
-# Enter a context with an instance of the API client
-with pieces_os_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = pieces_os_client.AssetApi(api_client)
-    transferables = True # bool | This is a boolean that will decide if we want to return the transferable data (default) or not (performance enhancement) (optional)
-    asset = pieces_os_client.Asset() # Asset | This is the updated Asset that needs to be updated in our db. (optional)
-
-    try:
-        # api_instance.asset_update(transferables=transferables, asset=asset) [POST] Scoped to Asset
-        api_response = api_instance.asset_update(transferables=transferables, asset=asset)
-        print("The response of AssetApi->asset_update:\n")
-        print(api_response)
-    except Exception as e:
-        print("Exception when calling AssetApi->asset_update: %s\n" % e)
-```
-</details>
-<details>
-<summary>Deleting an Asset</summary>
-
-   Similar to the previous example, you need assetSnapshot in order to access the proper asset on your list of data. You can use this endpoint to completely delete a specific asset wherever it may be in the list of all of your assets by taking a UID to delete out of the assets table.
-
-```python
- 
-# Enter a context with an instance of the API client
-with pieces_os_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = pieces_os_client.AssetsApi(api_client)
-    asset = '2254f2c8-5797-40e8-ac56-41166dc0e159' # str | The id (uuid) of the asset that you are trying to access.
-
-    try:
-        # api_instance.assets_delete_asset(asset) [POST] Scoped to Asset
-        api_response = api_instance.assets_delete_asset(asset)
-        print("The response of AssetsApi->assets_delete_asset:\n")
-        print(api_response)
-    except Exception as e:
-        print("Exception when calling AssetsApi->assets_delete_asset: %s\n" % e)
-```
-</details>
--->
 
 A developer documentation that outlines all the ins and outs of our available endpoints can be found [here](https://github.com/pieces-app/pieces-os-client-sdk-for-python/tree/main/docs).
-
-<!--
-## Contributing
-Contributions to the Pieces SDK are welcome! To contribute, follow these steps:
-
-Install Poetry:
-
-```shell
-pip install poetry
-```
-
-Install dependencies:
-
-```shell
-poetry install
-```
-
-Build the project:
-
-```shell
-poetry build
-```
-
-Add project dependencies:
-
-```shell
-poetry add <dependency>
-```
----->
 
 ## Learn More / Support
 Explore more about Pieces SDK and get help from the following resources:
