@@ -24,8 +24,8 @@
       <a href="https://twitter.com/getpieces" alt="Twitter Follow">
          <img src="https://img.shields.io/twitter/follow/pieces.svg?label=Follow" />
       </a>
-      <a href="https://github.com/pieces-app/cli-agent" alt="License">
-         <img src="https://img.shields.io/github/license/pieces-app/pieces-os-client-sdk-for-python.svg" />
+      <a href="https://github.com/pieces-app/pieces-os-client-sdk-for-typescript" alt="License">
+         <img src="https://img.shields.io/github/license/pieces-app/pieces-os-client-sdk-for-typescript.svg" />
       </a>
       <a href="https://badge.fury.io/js/@pieces.app%2Fpieces-os-client" >
          <img src="https://badge.fury.io/js/@pieces.app%2Fpieces-os-client.svg" />
@@ -41,12 +41,13 @@
 
 
 ## Introduction
+The Pieces SDK is a powerful code engine package designed for writing applications on top of [Pieces OS](/installation-getting-started/what-am-i-installing). It facilitates communication with a locally hosted server to enable features such as copilot chats, asset saving, and more.
 
-**@pieces.app/pieces-os-client** is an open-source on-device AI development workflow assistant.
+## Requirements
+The Pieces SDK has the following system requirements:
 
-This package contains endpoints for communicating with [Pieces OS](https://docs.pieces.app/installation-getting-started/pieces-os) to add Pieces Copilot conversations or save code snippets and resources - entirely offline and on device with Local Large Language Models (LLLMs) keeping your data secure.
-
-Follow [this guide](https://code.pieces.app/blog/build-your-own-copilot-in-less-than-10-minutes-with-pieces-os-client) to get started with the Pieces Client in your own development environment. Check out the table of contents below to understand specific functionality, but we recommend reading along the [Copilot Series](https://code.pieces.app/blog/build-your-own-open-source-copilot-with-pieces).
+- [Pieces OS](/installation-getting-started/what-am-i-installing) running as a backend service.
+- NodeJs environment with npm for installing the SDK package.
 
 ## Installation
 
@@ -75,6 +76,12 @@ Using pnpm:
 pnpm add @pieces.app/pieces-os-client
 ```
 
+Using yarn:
+
+```bash
+yarn add @pieces.app/pieces-os-client
+```
+
 ## Usage
 After you install the package, you can import the library into your file(s) using require:
 
@@ -89,13 +96,13 @@ import * as pieces from '@pieces.app/pieces-os-client'
 ```
 
 > **Recommendation**
-> The order that npm packages are saved and added to your dependencies is important and will affect your installation flow. **This slowed me down for quite a bit.**
+> The order that npm packages are saved and added to your dependencies is important and will affect your installation flow. 
 >
 > **If you are having issues with your installation, it is likely due to a conflict in Typescript versions - `npm uninstall typescript` - then go back and perform all other npm installations before reinstalling typescript again**.
 
 You can get it here: [GitHub Repo](https://github.com/pieces-app/example-typescript)
 
-For detailed usage instructions and examples, refer to the [documentation](https://docs.pieces.app/).
+For detailed usage instructions and examples, refer to the [documentation](https://docs.pieces.app/build).
 
 ## Features
 The Pieces SDK offers the following key features:
@@ -105,47 +112,45 @@ The Pieces SDK offers the following key features:
 3. Local Server Interaction: Interact with a locally hosted server for various functionalities.
 4. Multi LLMs support: Use any Pieces supported LLMs to power apps.
 
-## Requirements
-The Pieces SDK has the following system requirements:
+## Getting Started
+> It's important to note that the localhost port for Pieces OS is different based on the operating system.
+>
+> For Linux, you should use `localhost:5323`.
+> 
+> For macOS and Windows, you should use `localhost:1000`.
 
-- Pieces OS running as a backend service.
-- NodeJs environment with npm for installing the SDK package.
+Create a `main.ts` file and add the following code:
 
-## Testing Usage
-When your program starts, it needs to connect to Pieces OS to gain access to any functional data and to exchange information on the `localhost:1000` route (or `localhost:5323` for linux). Now that you have your `tracked_application` - lets get into the details.
+```typescript
+import * as Pieces from '@pieces.app/pieces-os-client'
+import os from 'os';
 
-Start by defining you connect function and prepare the `connectorApi` on `Pieces.ConnectorApi().connect()` passing in the `tracked_applicaition` we created above:
+const platform = os.platform();
+let port = 1000;
 
-```tsx
-export async function connect(): Promise<JSON> {
-  const connectorApi = new Pieces.ConnectorApi();
-  const response = await connectorApi.connect({
-    seededConnectorConnection: { application: tracked_application },
-  });
-  
-  return JSON.parse(JSON.stringify(response));
+// Defining the port based on the operating system. For Linux, the port is 5323, and for macOS/Windows, the port is 1000.
+if (platform === 'linux') {
+  port = 5323;
+} else {
+  port = 1000;
 }
+
+// The `basePath` defaults to http://localhost:1000, however we need to change it to the correct port based on the operating system.
+const configuration = Pieces.Configuration({
+  basePath: `http://localhost:${port}`
+})
+// Create an instance of the WellKnownApi class
+const apiInstance = new Pieces.WellKnownApi(configuration)
+
+apiInstance.getWellKnownHealth().then((data: string) => {
+  console.log(data) // ok
+}).catch((error: unknown) => console.error(error))
 ```
 
-Here is the entire connect function for you to double-check your work:
+Run the following command to execute the script:
 
-```tsx
-const tracked_application = {
-  name: Pieces.ApplicationNameEnum.OpenSource,
-  version: '0.0.1',
-  platform: Pieces.PlatformEnum.Macos,
-}
-
-
-export async function connect(): Promise<JSON> {
-  const connectorApi = new Pieces.ConnectorApi();
-
-  const response = await connectorApi.connect({
-    seededConnectorConnection: { application: tracked_application },
-  });
-
-  return JSON.parse(JSON.stringify(response));
-}
+```shell
+ts-node main.ts
 ```
 
 ## Examples
@@ -226,92 +231,7 @@ new Pieces.AssetsApi().assetsSnapshot({}).then(_assetList => {
 ```
 </details>
 
-<!--
-
-<details>
-
-<summary>Refresh your Assets Snapshot</summary>
-
-In order to get updates to your assetSnapshot as a whole, you may need to update you local list in order to reflect changes that come from Pieces OS and give information on the assets stored there. In order to perform a refresh you can use this code block here:
-
-```tsx
-const [array, setArray] = useState([]);
-
-const refresh = (_newAsset: LocalAsset) => {
-    setArray(prevArray => [...prevArray, _newAsset])
-}
-
-function refreshSnippetList() {
-    new Pieces.AssetsApi().assetsSnapshot({}).then((assets) => {
-        
-        // loop through your assets.
-        for (let i = 0; i < assets.iterable.length; i++) {
-            let _local: LocalAsset = {
-                id: assets.iterable[i].id,
-                name: assets.iterable[i].name,
-                classification: assets.iterable[i].original.reference.classification.specific
-            }
-
-            refresh(_local);
-
-        }
-    })
-}
-```
-
-I added this to the top level for reactivity inside the main `App()` call. You can choose to place this in a different location if you are not in need of any reactive data.
-</details>
-
-<details>
-
-<summary>Delete your Assets Snapshot</summary>
-
-Assets can be deleted from your Assets list entirely by passing them into the `assetsDeleteAsset` endpoint. Just like the above example to rename a specific asset, you will need the ID of the asset that you are trying to remove. In order to get that you will need to use assetSnapshot in tandem with your delete endpoint:
-
-```tsx
- new Pieces.AssetsApi().assetsSnapshot({}).then(_assetList => {
-    for (let i = 0; i < _assetList.iterable.length; i++) {
-        if (_assetList.iterable[i].id == _id) {
-            new Pieces.AssetsApi().assetsDeleteAsset({asset: _assetList.iterable[i].id }).then(_ => console.log("delete confirmed!"))
-        }
-    }
-})
-```
-
-After a successful delete, you may have to reload your browser window in order to see the updated snippet list.
-
-> **Recommendation**  
-> We use [JSON Viewer](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh) internally when developing and **recommend** using some form of web based extension that assists with reading JSON DATA
-</details>
-
-<details>
-
-<summary>Search through Snippets</summary>
-
-The search API can be used to filter or search through snippets that have been saved, then perform specific actions on them based on a set of rules. Here is a brief example of searching where `query: "page"` is your search term:
-
-```typescript
-new Pieces.SearchApi().fullTextSearch({ query: "page" }).then( searchedAssets => {
-
-    // get the "ID" or identifier of the first match on the string you passed in as the query:
-    let firstSearchMatchAssetIdentifier = searchedAssets.iterable[0].identifier;
-
-    let matchName: String;
-
-    // take that identifier to get your assets name using the Pieces.AssetApi()
-    new Pieces.AssetApi().assetSnapshot({asset: firstSearchMatchAssetIdentifier}).then((asset) => {
-      // assign that name to the matchName variable:
-      matchName = asset.name;
-      console.log(matchName);
-    })
-    // then you can do whatever you would like with that match:   
-  return matchName;
-})
-```
-</details>
--->
-
-A developer documentation that outlines all the ins and outs of our available endpoints can be found [here](https://github.com/pieces-app/pieces-os-client-sdk-for-python/tree/main/docs).
+A developer documentation that outlines all the ins and outs of our available endpoints can be found [here](https://docs.pieces.app/build/reference/typescript/).
 
 ## Learn More 
 Explore more about Pieces SDK and get help from the following resources:
